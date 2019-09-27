@@ -17,10 +17,8 @@ from sklearn.model_selection import train_test_split
 
 def train():
     # Read Data
-    train_df = pd.read_csv(
-        'C:\\Users\\GCP - DR\\Downloads\\kaggle-titanic-master\\kaggle-titanic-master\\input\\train.csv')
-    test_df = pd.read_csv(
-        'C:\\Users\\GCP - DR\\Downloads\\kaggle-titanic-master\\kaggle-titanic-master\\input\\test.csv')
+    train_df = pd.read_csv('../train.csv')
+    test_df = pd.read_csv('../test.csv')
 
 # _________________________________________________DATA CLEANING____________________________________________________
     # Print head and tail of data set:
@@ -94,9 +92,7 @@ def train():
     acc_random_forest = round(random_forest.score(X_train, Y_train) * 100, 2)
     print(acc_random_forest)
     test_df['Predict'] = Y_pred
-    test_df.to_csv(index=False,
-                   path_or_buf="C:\\Users\\GCP - DR\\Downloads\\kaggle-titanic-master"
-                               "\\kaggle-titanic-master\\input\\output.csv")
+    test_df.to_csv(index=False, path_or_buf="../output.csv")
 
 if __name__ == "__main__":
     train()
